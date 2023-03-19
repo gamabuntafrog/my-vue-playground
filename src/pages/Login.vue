@@ -1,11 +1,7 @@
 <template>
   <section>
     <div class="loader-backdrop" v-if="isLoading">
-      <div class="loader">
-        <h1>
-          Loading...
-        </h1>
-      </div>
+      <div class="loader"/>
     </div>
     <div v-if="step === 0" class="left-side">
       <h1>Вхід</h1>
@@ -164,22 +160,6 @@ section {
   align-items: center;
 }
 
-.loader {
-
-  width: 30%;
-  min-width: fit-content;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: blanchedalmond;
-
-  h1 {
-    margin-bottom: 0;
-  }
-}
-
 h1 {
   margin-bottom: 10vh;
   font-size: 50px;
@@ -233,6 +213,16 @@ button.standard {
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media screen and (max-width: 400px) {
+  .left-side {
+    width: 100%;
+    min-width: 200px;
+  }
+  .right-side {
+    display: none;
+  }
 }
 
 </style>
