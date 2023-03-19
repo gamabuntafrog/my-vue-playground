@@ -1,7 +1,10 @@
 <template>
-  <div id="app">
+  <div v-if="!$store.state.isUserLoading" id="app">
     <Header/>
     <RouterView/>
+  </div>
+  <div v-else class="loader-backdrop">
+    <div class="loader"/>
   </div>
 </template>
 
@@ -11,10 +14,16 @@ import Header from "@/components/Header";
 
 export default {
   name: 'App',
+  data() {
+    return {
+
+    }
+  },
   components: {
     Header
   },
   beforeCreate() {
+
     this.$store.commit('initialiseStore');
   }
 }
@@ -64,11 +73,25 @@ button.standard {
 
 .loader {
   border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
+  border-top: 16px solid #2c3e50 ; /* Blue */
   border-radius: 50%;
   width: 120px;
   height: 120px;
   animation: spin 2s linear infinite;
+}
+
+.loader-backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes spin {
