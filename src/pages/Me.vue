@@ -2,14 +2,14 @@
   <section>
     <div class="container">
       <div v-if="!isChangingInfo" class="user-info">
-        <img :src="$store.state.avatar" alt="avatar"/>
+        <img  v-if="$store.state.avatar" :src="$store.state.avatar" alt="avatar"/>
         <h1>{{ $store.state.username }}</h1>
         <button @click="isChangingInfo = true" class="standard change-info-button">
           Змінити дані
         </button>
       </div>
       <div v-else class="change-user-info">
-        <img :src="$store.state.avatar" alt="avatar"/>
+        <img v-if="$store.state.avatar" :src="$store.state.avatar" alt="avatar"/>
         <input
             id="username"
             class="standard"
