@@ -40,7 +40,8 @@ const store = createStore({
             state.avatar = avatar
         },
         async logout(state) {
-            Object.assign(state, getInitialState())
+            Object.assign(state, {...getInitialState(), isUserLoading: false})
+
         },
         updateProfile(state, newInfo) {
             const {username} = newInfo
