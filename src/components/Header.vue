@@ -3,39 +3,39 @@
     <nav>
       <ul v-if="!$store.state.isLoggedIn">
         <li>
-          <router-link to="/">
+          <router-link active-class="active" to="/">
             Дім
           </router-link>
         </li>
         <li>
-          <router-link to="/weather">
+          <router-link active-class="active" to="/weather">
             Погода
           </router-link>
         </li>
         <li>
-          <router-link to="/login">
+          <router-link active-class="active" to="/login">
             Вхід
           </router-link>
         </li>
         <li>
-          <router-link to="/login">
+          <router-link active-class="active" to="/login">
             Реєстрація
           </router-link>
         </li>
       </ul>
       <ul v-else>
         <li>
-          <router-link to="/">
+          <router-link active-class="active" to="/">
             Дім
           </router-link>
         </li>
         <li>
-          <router-link to="/weather">
+          <router-link active-class="active" to="/weather">
             Погода
           </router-link>
         </li>
         <li class="avatarWrapper">
-          <router-link to="/me">
+          <router-link active-class="active" to="/me">
             <img v-if="$store.state.avatar" class="avatar" :src="$store.state.avatar" alt="avatar"/>
             @{{ $store.state.username }}
           </router-link>
@@ -123,6 +123,10 @@ header {
     &:hover {
       color: blanchedalmond;
     }
+  }
+
+  a.active {
+    color: blanchedalmond;
   }
 
   @media screen and (max-width: 760px) {
