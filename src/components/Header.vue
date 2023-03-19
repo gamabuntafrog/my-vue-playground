@@ -65,6 +65,7 @@ export default {
 header {
   padding: 10px 20px;
   height: 60px;
+  font-size: smaller;
 
   display: flex;
   align-items: center;
